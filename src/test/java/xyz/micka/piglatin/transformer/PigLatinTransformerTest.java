@@ -40,7 +40,6 @@ class PigLatinTransformerTest {
     public void transformerExceptionThrownIfInputCannotBeRead() throws IOException {
         InputStream mock = Mockito.mock(InputStream.class, Mockito.CALLS_REAL_METHODS);
         Mockito.doThrow(IOException.class).when(mock).read();
-        Mockito.doThrow(IOException.class).when(mock).read(Mockito.any()); // be sure that some read is called :-)
         org.junit.jupiter.api.Assertions.assertThrows(TransformerException.class, () -> {
             var transformer = new PigLatinTransformer();
             transformer.transform(mock, System.out);
