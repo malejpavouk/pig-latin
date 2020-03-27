@@ -24,3 +24,11 @@ $ printf "Hello 'apple', \nstarway can't end this-day." | java -jar pig-latin-1.
 Ellohay 'appleway',
 starway antca'y endway histay-ayday.
 ```
+
+Technologies
+===
+ * Build: Gradle (Kotlin DSL)
+ * Quality: Checkstyle, PMD, JaCoCo
+ * Code: Java 11
+ * Logging: SLF4J/Logback
+ * Tests: jUnit 5
