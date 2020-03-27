@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<ruleset name="Custom ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>
+        Custom rules for PiGLatin project
+    </description>
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="BeanMembersShouldSerialize"/> <!-- no use of java serialization -->
+        <exclude name="MissingSerialVersionUID"/> <!-- no use of java serialization -->
+        <exclude name="DataflowAnomalyAnalysis"/> <!-- These rules have plenty FPs -->
+    </rule>
+    <rule ref="category/java/errorprone.xml/AssignmentInOperand">
+        <properties>
+            <property name="allowWhile" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="SystemPrintln" /> <!-- this is a command line app -->
+    </rule>
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="LocalVariableCouldBeFinal" /> <!-- and is effectively final-->
+        <exclude name="MethodArgumentCouldBeFinal" />
+        <exclude name="AtLeastOneConstructor" />
+        <exclude name="OnlyOneReturn" />
+    </rule>
+    <rule ref="category/java/design.xml">
+        <exclude name="LawOfDemeter"/> <!-- has issues with streams -->
+        <exclude name="LoosePackageCoupling" />
+    </rule>
+    <rule ref="category/java/documentation.xml">
+        <exclude name="CommentRequired"/>
+        <exclude name="CommentSize"/>
+        <exclude name="UncommentedEmptyConstructor"/>
+        <exclude name="UncommentedEmptyMethodBody"/>
+    </rule>
+
+    <rule ref="category/java/multithreading.xml"/>
+    <rule ref="category/java/performance.xml">
+        <exclude name="RedundantFieldInitializer"/> <!-- improves readability -->
+    </rule>
+
+    <!-- not all public static final are constants-->
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions">
+        <properties>
+            <property name="constantPattern" value="([A-Z][A-Z_0-9]*|[a-z][A-Za-z0-9]*)"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/security.xml"/>
+</ruleset>
