@@ -1,3 +1,7 @@
+How does it work
+===
+Reads English words, sentences or paragraphs from standard input. Prints the results on the standard output.
+
 Out of scope/Known limitations
 ===
  * Abbreviations
@@ -5,16 +9,11 @@ Out of scope/Known limitations
  * **y** is always considered a vowel. Which is not true in English (validated with client that this is expected).
  * Words that are shortened using apostrophe at the end or start of the word ('tis == it is; goin' == going)
  
- 
 How to build it
 ===
 Project uses gradle wrapper, so just use:
 `./gradlew build`
 This command builds a fat jar, which includes all the necessary dependencies.
-
-How does it work
-===
-Reads English words, sentences or paragraphs from standard input. Prints the results on the standard output.
 
 Usage
 ===
