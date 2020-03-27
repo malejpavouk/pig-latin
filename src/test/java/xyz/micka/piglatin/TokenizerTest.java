@@ -108,7 +108,6 @@ class TokenizerTest {
 
     @Test
     public void tokenizerExceptionThrownIfInputCannotBeRead() throws IOException {
-
         PushbackReader mock = Mockito.mock(PushbackReader.class);
         Mockito.doThrow(IOException.class).when(mock).read();
         org.junit.jupiter.api.Assertions.assertThrows(TokenizerException.class, () -> {

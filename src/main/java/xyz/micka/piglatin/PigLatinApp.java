@@ -2,6 +2,7 @@ package xyz.micka.piglatin;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import xyz.micka.piglatin.transformer.PigLatinTransformer;
 
 /**
  * Entrypoint to our Pig Latin application. Its a command line tool that reads English from standard in (in UTF-8)

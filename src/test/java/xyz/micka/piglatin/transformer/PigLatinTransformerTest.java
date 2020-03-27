@@ -1,11 +1,13 @@
-package xyz.micka.piglatin;
+package xyz.micka.piglatin.transformer;
 
 import org.apache.commons.io.IOUtils;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -32,6 +34,17 @@ class PigLatinTransformerTest {
     @Test
     public void quotationUsingSingleQuotesIsTreatedAsOutsideOfTheWord() {
         assertTransformerResult("’apple’", "’appleway’");
+    }
+
+    @Test
+    public void transformerExceptionThrownIfInputCannotBeRead() throws IOException {
+        InputStream mock = Mockito.mock(InputStream.class, Mockito.CALLS_REAL_METHODS);
+        Mockito.doThrow(IOException.class).when(mock).read();
+        Mockito.doThrow(IOException.class).when(mock).read(Mockito.any()); // be sure that some read is called :-)
+        org.junit.jupiter.api.Assertions.assertThrows(TransformerException.class, () -> {
+            var transformer = new PigLatinTransformer();
+            transformer.transform(mock, System.out);
+        });
     }
 
     private void assertTransformerResult(String source, String expected) {
