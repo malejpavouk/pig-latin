@@ -20,8 +20,7 @@ Usage
 ===
 Build the project. Go to `build/libs` directory and execute.
 ```
-$ printf "Hello apple, \nstarway can't this-way end." | java -jar pig-latin-1.0.0.jar
-Ellohay appleway,
-starway antca'y histay-way endway.
-
+$ printf "Hello 'apple', \nstarway can't end this-day." | java -jar pig-latin-1.0.0.jar
+Ellohay 'appleway',
+starway antca'y endway histay-ayday.
 ```
