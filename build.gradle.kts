@@ -26,3 +26,13 @@ java {
 repositories {
     mavenCentral()
 }
+
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "xyz.micka.piglatin.PigLatinApp"
+    }
+
+    // build a fat jar
+    from(configurations.runtimeClasspath.get()
+        .map { if (it.isDirectory) it else zipTree(it) })
+}

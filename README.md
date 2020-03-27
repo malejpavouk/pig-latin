@@ -6,6 +6,22 @@ Out of scope/Known limitations
  * Words that are shortened using apostrophe at the end or start of the word ('tis == it is; goin' == going)
  
  
- TODO
- ---
-  * Logging 
+How to build it
+===
+Project uses gradle wrapper, so just use:
+`./gradlew build`
+This command builds a fat jar, which includes all the necessary dependencies.
+
+How does it work
+===
+Reads English words, sentences or paragraphs from standard input. Prints the results on the standard output.
+
+Usage
+===
+Build the project. Go to `build/libs` directory and execute.
+```
+$ printf "Hello apple, \nstarway can't this-way end." | java -jar pig-latin-1.0.0.jar
+Ellohay appleway,
+starway antca'y histay-way endway.
+
+```
