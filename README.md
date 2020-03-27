@@ -19,9 +19,9 @@ Usage
 ===
 Build the project. Go to `build/libs` directory and execute.
 ```
-$ printf "Hello 'apple', McCloud's \nstarway can't end this-day." | java -jar pig-latin-1.0.0.jar
-Ellohay 'appleway', CcLoudsma'y
-starway antca'y endway histay-ayday.
+$ printf "Hello 'apple',\nMcCloud's starway can't end this-day." | java -jar pig-latin-1.0.0.jar
+Ellohay 'appleway',
+CcLoudsma'y starway antca'y endway histay-ayday.
 ```
 
 Technologies
