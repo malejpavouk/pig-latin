@@ -27,8 +27,8 @@ starway antca'y endway histay-ayday.
 
 Technologies
 ===
- * Build: Gradle (Kotlin DSL)
- * Quality: Checkstyle, PMD, JaCoCo
- * Code: Java 11
- * Logging: SLF4J/Logback
- * Tests: jUnit 5
+ * **Build**: Gradle (Kotlin DSL)
+ * **Code**: Java 11
+ * **Quality**: Checkstyle, PMD, JaCoCo
+ * **Logging**: SLF4J/Logback
+ * **Tests**: jUnit 5
